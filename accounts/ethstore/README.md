@@ -1,11 +1,11 @@
 ## ethstore-cli
 
-OpenEthereum key management.
+OpenETC key management.
 
 ### Usage
 
 ```
-OpenEthereum key management tool.
+OpenETC key management tool.
   Copyright 2015-2020 Parity Technologies (UK) Ltd.
 
 Usage:
@@ -330,11 +330,11 @@ ethstore move-from-vault 00e63fdb87ceb815ec96ae185b8f7381a0b4a5ea vault1 vault1_
 OK
 ```
 
-## OpenEthereum toolchain
-_This project is a part of the OpenEthereum toolchain._
+## OpenETC toolchain
+_This project is a part of the OpenETC toolchain._
 
-- [evmbin](https://github.com/openethereum/openethereum/blob/master/evmbin/) - EVM implementation for OpenEthereum.
-- [ethabi](https://github.com/OpenEthereum/ethabi) - OpenEthereum function calls encoding.
-- [ethstore](https://github.com/openethereum/openethereum/blob/master/accounts/ethstore) - OpenEthereum key management.
-- [ethkey](https://github.com/openethereum/openethereum/blob/master/accounts/ethkey) - OpenEthereum keys generator.
-- [whisper](https://github.com/OpenEthereum/whisper) - Implementation of Whisper-v2 PoC.
+- [evmbin](https://github.com/openetc/openetc/blob/master/evmbin/) - EVM implementation for OpenETC.
+- [ethabi](https://github.com/openethereum/ethabi) - OpenETC function calls encoding.
+- [ethstore](https://github.com/openetc/openetc/blob/master/accounts/ethstore) - OpenETC key management.
+- [ethkey](https://github.com/openetc/openetc/blob/master/accounts/ethkey) - OpenETC keys generator.
+- [whisper](https://github.com/openethereum/whisper) - Implementation of Whisper-v2 PoC.

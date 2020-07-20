@@ -1,9 +1,9 @@
 [package]
-description = "OpenEthereum Key Management"
+description = "OpenETC Key Management"
 name = "ethstore"
 version = "0.2.1"
 authors = ["Parity Technologies <admin@parity.io>"]
-repository = "https://github.com/openethereum/openethereum"
+repository = "https://github.com/openetc/openetc"
 
 [dependencies]
 log = "0.4"

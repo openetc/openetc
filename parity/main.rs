@@ -24,7 +24,7 @@ extern crate fdlimit;
 #[macro_use]
 extern crate log;
 extern crate panic_hook;
-extern crate openethereum;
+extern crate openetc;
 extern crate parking_lot;
 extern crate parity_daemonize;
 extern crate ansi_term;
@@ -44,7 +44,7 @@ use ansi_term::Colour;
 use dir::default_hypervisor_path;
 use fdlimit::raise_fd_limit;
 use ethcore_logger::setup_log;
-use openethereum::{start, ExecutionAction};
+use openetc::{start, ExecutionAction};
 use parity_daemonize::AsHandle;
 use parking_lot::{Condvar, Mutex};
 
@@ -186,7 +186,7 @@ fn main_direct(force_can_restart: bool) -> i32 {
 
 	let mut conf = {
 		let args = std::env::args().collect::<Vec<_>>();
-		openethereum::Configuration::parse_cli(&args).unwrap_or_else(|e| e.exit())
+		openetc::Configuration::parse_cli(&args).unwrap_or_else(|e| e.exit())
 	};
 
 	let logger = setup_log(&conf.logger_config()).unwrap_or_else(|e| {

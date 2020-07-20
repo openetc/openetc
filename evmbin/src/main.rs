@@ -14,22 +14,22 @@
 // You should have received a copy of the GNU General Public License
 // along with Open Ethereum.  If not, see <http://www.gnu.org/licenses/>.
 
-//! OpenEthereum EVM Interpreter Binary.
+//! OpenETC EVM Interpreter Binary.
 //!
 //! ## Overview
 //!
-//! The OpenEthereum EVM interpreter binary is a tool in the OpenEthereum
-//! toolchain. It is an EVM implementation for OpenEthereum that
+//! The OpenETC EVM interpreter binary is a tool in the OpenETC
+//! toolchain. It is an EVM implementation for OpenETC that
 //! is used to run a standalone version of the EVM interpreter.
 //!
 //! ## Usage
 //!
-//! The evmbin tool is not distributed with regular OpenEthereum releases
+//! The evmbin tool is not distributed with regular OpenETC releases
 //! so you need to build it from source and run it like so:
 //!
 //! ```bash
 //! cargo build -p evmbin --release
-//! ./target/release/openethereum-evm --help
+//! ./target/release/openetc-evm --help
 //! ```
 
 #![warn(missing_docs)]
@@ -53,15 +53,15 @@ mod display;
 use crate::info::{Informant, TxInput};
 
 const USAGE: &'static str = r#"
-EVM implementation for OpenEthereum.
+EVM implementation for OpenETC.
   Copyright 2015-2020 Parity Technologies (UK) Ltd.
 
 Usage:
-    openethereum-evm state-test <file> [--chain CHAIN --only NAME --json --std-json --std-dump-json --std-out-only --std-err-only]
-    openethereum-evm stats [options]
-    openethereum-evm stats-jsontests-vm <file>
-    openethereum-evm [options]
-    openethereum-evm [-h | --help]
+    openetc-evm state-test <file> [--chain CHAIN --only NAME --json --std-json --std-dump-json --std-out-only --std-err-only]
+    openetc-evm stats [options]
+    openetc-evm stats-jsontests-vm <file>
+    openetc-evm [options]
+    openetc-evm [-h | --help]
 
 Commands:
     state-test         Run a state test on a provided state test JSON file.
@@ -472,7 +472,7 @@ mod tests {
 	#[test]
 	fn should_parse_all_the_options() {
 		let args = run(&[
-			"openethereum-evm",
+			"openetc-evm",
 			"--code", "05",
 			"--to", "0000000000000000000000000000000000000004",
 			"--from", "0000000000000000000000000000000000000003",
@@ -504,7 +504,7 @@ mod tests {
 	#[test]
 	fn should_parse_state_test_command() {
 		let args = run(&[
-			"openethereum-evm",
+			"openetc-evm",
 			"state-test",
 			"./file.json",
 			"--chain", "homestead",
@@ -531,7 +531,7 @@ mod tests {
 	#[should_panic]
 	fn should_not_parse_only_flag_without_state_test() {
 		let _ = run(&[
-			"openethereum-evm",
+			"openetc-evm",
 			"./file.json",
 			"--chain", "homestead",
 			"--only=add11",
@@ -543,7 +543,7 @@ mod tests {
 	#[should_panic]
 	fn should_not_parse_only_flag_with_stats() {
 		let _ = run(&[
-			"openethereum-evm",
+			"openetc-evm",
 			"stats",
 			"./file.json",
 			"--chain", "homestead",
@@ -625,7 +625,7 @@ mod tests {
 	#[test]
 	fn should_error_out_of_gas() {
 		let args = run(&[
-			"openethereum-evm",
+			"openetc-evm",
 			"stats",
 			"--to", "0000000000000000000000000000000000000004",
 			"--from", "0000000000000000000000000000000000000003",
@@ -650,7 +650,7 @@ mod tests {
 	#[test]
 	fn should_not_error_out_of_gas() {
 		let args = run(&[
-			"openethereum-evm",
+			"openetc-evm",
 			"stats",
 			"--to", "0000000000000000000000000000000000000004",
 			"--from", "0000000000000000000000000000000000000003",

@@ -104,7 +104,7 @@ impl Configuration {
 	/// # Example
 	///
 	/// ```
-	/// let _cfg = openethereum::Configuration::parse_cli(&["--light", "--chain", "kovan"]).unwrap();
+	/// let _cfg = openetc::Configuration::parse_cli(&["--light", "--chain", "kovan"]).unwrap();
 	/// ```
 	pub fn parse_cli<S: AsRef<str>>(command: &[S]) -> Result<Self, ArgsError> {
 		let config = Configuration {
@@ -762,7 +762,7 @@ impl Configuration {
 		ret.client_version = {
 			let mut client_version = version();
 			if !self.args.arg_identity.is_empty() {
-				// Insert name after the "OpenEthereum/" at the beginning of version string.
+				// Insert name after the "OpenETC/" at the beginning of version string.
 				let idx = client_version.find('/').unwrap_or(client_version.len());
 				client_version.insert_str(idx, &format!("/{}", self.args.arg_identity));
 			}
@@ -1748,7 +1748,7 @@ mod tests {
 		match conf.into_command().unwrap().cmd {
 			Cmd::Run(c) => {
 				assert_eq!(c.name, "Somebody");
-				assert!(c.net_conf.client_version.starts_with("OpenEthereum/Somebody/"));
+				assert!(c.net_conf.client_version.starts_with("OpenETC/Somebody/"));
 			}
 			_ => panic!("Should be Cmd::Run"),
 		}

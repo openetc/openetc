@@ -1,6 +1,6 @@
 [package]
-description = "OpenEthereum (EthCore) Library"
-repository = "https://github.com/openethereum/openethereum"
+description = "OpenETC (EthCore) Library"
+repository = "https://github.com/openetc/openetc"
 license = "GPL-3.0"
 name = "ethcore"
 version = "1.12.0"

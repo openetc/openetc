@@ -234,14 +234,14 @@ fn default_path(t: AppDataType) -> Option<PathBuf> {
 	}
 
 	let mut root = data_root(t).ok()?;
-	root.push(if LOWERCASE { "openethereum" } else { "OpenEthereum" });
+	root.push(if LOWERCASE { "openetc" } else { "OpenETC" });
 	Some(root)
 }
 
 fn fallback_path() -> PathBuf {
 	let mut p = PathBuf::new();
 	p.push("$HOME");
-	p.push(".openethereum");
+	p.push(".openetc");
 	p
 }
 

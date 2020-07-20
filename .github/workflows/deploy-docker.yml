@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - master
+      - master-v3.0.1
     tags:
       - v*
 
@@ -23,7 +24,7 @@ jobs:
       - name:                   Deploy to docker hub
         uses: elgohr/Publish-Docker-Github-Action@master
         with:
-          name: openethereum/openethereum
+          name: openetc/openetc
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
           dockerfile: scripts/docker/alpine/Dockerfile

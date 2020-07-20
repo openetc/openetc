@@ -1,5 +1,5 @@
 [package]
-description = "OpenEthereum Keys Generator"
+description = "OpenETC Keys Generator"
 name = "ethkey"
 version = "0.4.0"
 authors = ["Parity Technologies <admin@parity.io>"]

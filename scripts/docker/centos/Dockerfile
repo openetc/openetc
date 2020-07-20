@@ -1,12 +1,12 @@
 FROM centos:latest
 
-RUN mkdir -p /opt/openethereum/data && \
-    chmod g+rwX /opt/openethereum/data && \
-    mkdir -p /opt/openethereum/release
+RUN mkdir -p /opt/openetc/data && \
+    chmod g+rwX /opt/openetc/data && \
+    mkdir -p /opt/openetc/release
 
-COPY openethereum/openethereum /opt/openethereum/release
+COPY openetc/openetc /opt/openetc/release
 
-WORKDIR /opt/openethereum/data
+WORKDIR /opt/openetc/data
 
 # exposing default ports
 #
@@ -20,4 +20,4 @@ USER 1001
 
 #if no base path provided, assume it's current workdir
 CMD ["--base-path","."]
-ENTRYPOINT ["/opt/openethereum/release/openethereum"]  
+ENTRYPOINT ["/opt/openetc/release/openetc"]

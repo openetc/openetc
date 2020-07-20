@@ -1,6 +1,6 @@
 [package]
-description = "OpenEthereum RPC Client"
-repository = "https://github.com/openethereum/openethereum"
+description = "OpenETC RPC Client"
+repository = "https://github.com/openetc/openetc"
 license = "GPL-3.0"
 name = "parity-rpc-client"
 version = "1.4.0"

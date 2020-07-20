@@ -15,11 +15,11 @@ RUN apk add --no-cache \
   clang-dev \
   llvm-dev
 
-WORKDIR /openethereum
-COPY . /openethereum
+WORKDIR /openetc
+COPY . /openetc
 ENV C=clang CXX=clang++
 RUN cargo build --release --features final --target x86_64-alpine-linux-musl --verbose
-RUN strip target/x86_64-alpine-linux-musl/release/openethereum
+RUN strip target/x86_64-alpine-linux-musl/release/openetc
 
 FROM alpine:edge
 
@@ -33,16 +33,16 @@ RUN apk add --no-cache \
   libgcc \
   curl
 
-RUN addgroup -g 1000 openethereum \
-  && adduser -u 1000 -G openethereum -s /bin/sh -D openethereum
+RUN addgroup -g 1000 openetc \
+  && adduser -u 1000 -G openetc -s /bin/sh -D openetc
 
-USER openethereum
+USER openetc
 
 EXPOSE 8080 8545 8180
 
-WORKDIR /home/openethereum
+WORKDIR /home/openetc
 
-RUN mkdir -p /home/openethereum/.local/share/io.parity.ethereum/
-COPY --chown=openethereum:openethereum --from=builder /openethereum/target/x86_64-alpine-linux-musl/release/openethereum ./
+RUN mkdir -p /home/openetc/.local/share/io.parity.ethereum/
+COPY --chown=openetc:openetc --from=builder /openetc/target/x86_64-alpine-linux-musl/release/openetc ./
 
-ENTRYPOINT ["./openethereum"]
+ENTRYPOINT ["./openetc"]

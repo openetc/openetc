@@ -423,7 +423,7 @@ impl Implementation for EcRecover {
 			// The builtin allows/requires all-zero messages to be valid to
 			// recover the public key. Use of such messages is disallowed in
 			// `rust-secp256k1` and this is a workaround for that. It is not an
-			// openethereum-level error to fail here; instead we return all
+			// openetc-level error to fail here; instead we return all
 			// zeroes and let the caller interpret that outcome.
 			let recovery_message = ZeroesAllowedMessage(hash);
 			if let Ok(p) = recover_allowing_all_zero_message(&s, recovery_message) {

@@ -27,19 +27,19 @@ ENV RUST_BACKTRACE 1
 # show tools
 RUN rustc -vV && cargo -V
 
-# build OpenEthereum
-ADD . /build/openethereum
-RUN cd openethereum && \
+# build OpenETC
+ADD . /build/openetc
+RUN cd openetc && \
         mkdir -p .cargo && \
         echo '[target.armv7-unknown-linux-gnueabihf]\n\
         linker = "arm-linux-gnueabihf-gcc"\n'\
         >>.cargo/config && \
         cat .cargo/config && \
         cargo build --target armv7-unknown-linux-gnueabihf --release --verbose && \
-        ls /build/openethereum/target/armv7-unknown-linux-gnueabihf/release/openethereum && \
-        /usr/bin/arm-linux-gnueabihf-strip /build/openethereum/target/armv7-unknown-linux-gnueabihf/release/openethereum
+        ls /build/openetc/target/armv7-unknown-linux-gnueabihf/release/openetc && \
+        /usr/bin/arm-linux-gnueabihf-strip /build/openetc/target/armv7-unknown-linux-gnueabihf/release/openetc
 
-RUN file /build/openethereum/target/armv7-unknown-linux-gnueabihf/release/openethereum
+RUN file /build/openetc/target/armv7-unknown-linux-gnueabihf/release/openetc
 
 EXPOSE 8080 8545 8180
-ENTRYPOINT ["/build/openethereum/target/armv7-unknown-linux-gnueabihf/release/openethereum"]
+ENTRYPOINT ["/build/openetc/target/armv7-unknown-linux-gnueabihf/release/openetc"]

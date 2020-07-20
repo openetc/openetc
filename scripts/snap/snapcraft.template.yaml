@@ -1,4 +1,4 @@
-name:               openethereum
+name:               openetc
 version:            $VERSION
 architectures:      [$BUILD_ARCH]
 grade:              $GRADE
@@ -6,18 +6,18 @@ confinement:        strict
 
 summary:            Fast and feature-rich multi-network Ethereum client.
 description:        |
-  OpenEthereum's goal is to be the fastest, lightest, and most secure Ethereum
-  client. We are developing OpenEthereum using the sophisticated and cutting-edge
-  Rust programming language. OpenEthereum is licensed under the GPLv3, and can be
+  OpenETC's goal is to be the fastest, lightest, and most secure Ethereum
+  client. We are developing OpenETC using the sophisticated and cutting-edge
+  Rust programming language. OpenETC is licensed under the GPLv3, and can be
   used for all your Ethereum needs.
 
 apps:
-  openethereum:
-    command:        openethereum
+  openetc:
+    command:        openetc
     plugs:          [home, network, network-bind, mount-observe, removable-media, x11, unity7, desktop, desktop-legacy, wayland]
-    desktop:        ./usr/share/applications/openethereum.desktop
-  openethereum-evm:
-    command:        openethereum-evm
+    desktop:        ./usr/share/applications/openetc.desktop
+  openetc-evm:
+    command:        openetc-evm
     plugs:          [home, network, network-bind, removable-media]
   ethkey:
     command:        ethkey
@@ -35,15 +35,15 @@ parts:
     override-build:        |
       mkdir -p $SNAPCRAFT_PART_INSTALL/usr/share/applications
       mkdir -p $SNAPCRAFT_PART_INSTALL/usr/share/pixmaps
-      cp -v ./openethereum.desktop $SNAPCRAFT_PART_INSTALL/usr/share/applications/
+      cp -v ./openetc.desktop $SNAPCRAFT_PART_INSTALL/usr/share/applications/
       cp -v ./icon.png $SNAPCRAFT_PART_INSTALL/usr/share/pixmaps/
-  openethereum:
+  openetc:
     source:         ./artifacts/$CARGO_TARGET
     plugin:         nil
     override-build:        |
       mkdir -p $SNAPCRAFT_PART_INSTALL/usr/bin
-      cp -v openethereum $SNAPCRAFT_PART_INSTALL/usr/bin/openethereum
-      cp -v openethereum-evm $SNAPCRAFT_PART_INSTALL/usr/bin/openethereum-evm
+      cp -v openetc $SNAPCRAFT_PART_INSTALL/usr/bin/openetc
+      cp -v openetc-evm $SNAPCRAFT_PART_INSTALL/usr/bin/openetc-evm
       cp -v ethkey $SNAPCRAFT_PART_INSTALL/usr/bin/ethkey
       cp -v ethstore $SNAPCRAFT_PART_INSTALL/usr/bin/ethstore
     stage-packages: [libstdc++6, cmake, libdb5.3]

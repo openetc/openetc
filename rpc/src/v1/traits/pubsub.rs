@@ -14,23 +14,23 @@
 // You should have received a copy of the GNU General Public License
 // along with Open Ethereum.  If not, see <http://www.gnu.org/licenses/>.
 
-//! OpenEthereum-specific PUB-SUB rpc interface.
+//! OpenETC-specific PUB-SUB rpc interface.
 
 use jsonrpc_core::{Result, Value, Params};
 use jsonrpc_pubsub::{typed::Subscriber, SubscriptionId};
 use jsonrpc_derive::rpc;
 
-/// OpenEthereum-specific PUB-SUB rpc interface.
+/// OpenETC-specific PUB-SUB rpc interface.
 #[rpc(server)]
 pub trait PubSub {
 	/// Pub/Sub Metadata
 	type Metadata;
 
-	/// Subscribe to changes of any RPC method in OpenEthereum.
+	/// Subscribe to changes of any RPC method in OpenETC.
 	#[pubsub(subscription = "parity_subscription", subscribe, name = "parity_subscribe")]
 	fn parity_subscribe(&self, _: Self::Metadata, _: Subscriber<Value>, _: String, _: Option<Params>);
 
-	/// Unsubscribe from existing OpenEthereum subscription.
+	/// Unsubscribe from existing OpenETC subscription.
 	#[pubsub(subscription = "parity_subscription", unsubscribe, name = "parity_unsubscribe")]
 	fn parity_unsubscribe(&self, _: Option<Self::Metadata>, _: SubscriptionId) -> Result<bool>;
 }

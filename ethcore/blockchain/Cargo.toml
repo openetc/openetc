@@ -1,6 +1,6 @@
 [package]
-description = "OpenEthereum Blockchain Database, Test Generator, Configuration, Caching, Importing Blocks, and Block Information"
-repository = "https://github.com/openethereum/openethereum"
+description = "OpenETC Blockchain Database, Test Generator, Configuration, Caching, Importing Blocks, and Block Information"
+repository = "https://github.com/openetc/openetc"
 license = "GPL-3.0"
 name = "ethcore-blockchain"
 version = "0.1.0"

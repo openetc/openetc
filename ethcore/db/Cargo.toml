@@ -1,6 +1,6 @@
 [package]
 description = "Ethcore DB access utilities"
-repository = "https://github.com/openethereum/openethereum"
+repository = "https://github.com/openetc/openetc"
 license = "GPL-3.0"
 name = "ethcore-db"
 version = "0.1.0"

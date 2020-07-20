@@ -21,19 +21,19 @@
 use semver::Version;
 use std::fmt;
 
-/// OpenEthereum client string prefix
+/// OpenETC client string prefix
 const LEGACY_CLIENT_ID_PREFIX: &str = "Parity-Ethereum";
-const CURRENT_CLIENT_ID_PREFIX: &str = "OpenEthereum";
+const CURRENT_CLIENT_ID_PREFIX: &str = "OpenETC";
 
 lazy_static! {
-/// OpenEthereum versions starting from this will accept block bodies requests
+/// OpenETC versions starting from this will accept block bodies requests
 /// of 256 bodies
 	static ref PARITY_CLIENT_LARGE_REQUESTS_VERSION: Version = Version::parse("2.4.0").unwrap();
 }
 
 /// Description of the software version running in a peer
 /// according to https://github.com/ethereum/wiki/wiki/Client-Version-Strings
-/// This structure as it is represents the format used by OpenEthereum clients. Other
+/// This structure as it is represents the format used by OpenETC clients. Other
 /// vendors may provide additional fields.
 #[derive(Clone,Debug,PartialEq,Eq,Serialize)]
 pub struct ParityClientData {
@@ -489,7 +489,7 @@ pub mod tests {
 	fn client_version_accepts_service_transaction_for_different_versions() {
 		assert!(!ClientVersion::from("Geth").accepts_service_transaction());
 		assert!(ClientVersion::from("Parity-Ethereum/v2.6.0/linux/rustc").accepts_service_transaction());
-		assert!(ClientVersion::from("OpenEthereum/ABCDEFGH/v2.7.3/linux/rustc").accepts_service_transaction());
+		assert!(ClientVersion::from("OpenETC/ABCDEFGH/v2.7.3/linux/rustc").accepts_service_transaction());
 	}
 
 	#[test]

@@ -2,7 +2,7 @@ FROM centos:latest
 
 WORKDIR /build
 
-ADD . /build/openethereum
+ADD . /build/openetc
 
 RUN yum -y update && \
     yum install -y systemd-devel git make gcc-c++ gcc file binutils && \
@@ -17,9 +17,7 @@ RUN yum -y update && \
     gcc -v && \
     g++ -v && \
     cmake --version && \
-    cd openethereum && \
+    cd openetc && \
     cargo build --verbose --release --features final && \
-    strip /build/openethereum/target/release/openethereum && \
-    file /build/openethereum/target/release/openethereum
-
-
+    strip /build/openetc/target/release/openetc && \
+    file /build/openetc/target/release/openetc

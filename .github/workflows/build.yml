@@ -76,10 +76,10 @@ jobs:
         run:                    choco install llvm
       - name:                   Sccache statistics
         run:                    sccache --show-stats
-      - name:                   Build OpenEthereum for windows
+      - name:                   Build OpenETC for windows
         if:                     matrix.platform == 'windows-latest'
         run:                    sh scripts/actions/build-windows.sh ${{matrix.platform}}
-      - name:                   Build OpenEthereum for ${{matrix.platform}}
+      - name:                   Build OpenETC for ${{matrix.platform}}
         if:                     matrix.platform != 'windows-latest'
         run:                    sh scripts/actions/build-linux.sh ${{matrix.platform}}
       - name:                   Stop sccache

@@ -1,12 +1,12 @@
 [package]
-description = "OpenEthereum EVM Implementation"
+description = "OpenETC EVM Implementation"
 name = "evmbin"
 version = "0.1.0"
 authors = ["Parity Technologies <admin@parity.io>"]
 edition = "2018"
 
 [[bin]]
-name = "openethereum-evm"
+name = "openetc-evm"
 path = "./src/main.rs"
 
 [dependencies]

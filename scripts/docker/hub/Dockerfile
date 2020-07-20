@@ -4,15 +4,15 @@ FROM ubuntu:xenial
 ARG VCS_REF
 ARG BUILD_DATE
 
-LABEL openethereum.image.authors="devops-team@parity.io" \
-	openethereum.image.vendor="OpenEthereum project" \
-	openethereum.image.title="openethereum/openethereum" \
-	openethereum.image.description="Fast and feature-rich multi-network Ethereum client." \
-	openethereum.image.source="https://github.com/openethereum/openethereum/blob/${VCS_REF}/\
+LABEL openetc.image.authors="devops-team@parity.io" \
+	openetc.image.vendor="OpenETC project" \
+	openetc.image.title="openetc/openetc" \
+	openetc.image.description="Fast and feature-rich multi-network Ethereum client." \
+	openetc.image.source="https://github.com/openetc/openetc/blob/${VCS_REF}/\
 	scripts/docker/hub/Dockerfile" \
-	openethereum.image.documentation="https://wiki.parity.io/Parity-Ethereum" \
-	openethereum.image.revision="${VCS_REF}" \
-	openethereum.image.created="${BUILD_DATE}"
+	openetc.image.documentation="https://wiki.parity.io/Parity-Ethereum" \
+	openetc.image.revision="${VCS_REF}" \
+	openetc.image.created="${BUILD_DATE}"
 
 # show backtraces
 ENV RUST_BACKTRACE 1
@@ -28,21 +28,21 @@ RUN set -eux; \
 	update-ca-certificates; \
 	rm -rf /tmp/* /var/tmp/* /var/lib/apt/lists/*; \
 	# add user
-	groupadd -g 1000 openethereum; \
-	useradd -m -u 1000 -g openethereum -s /bin/sh openethereum
+	groupadd -g 1000 openetc; \
+	useradd -m -u 1000 -g openetc -s /bin/sh openetc
 
-WORKDIR /home/openethereum
+WORKDIR /home/openetc
 
-# add openethereum binary to docker image
-COPY artifacts/x86_64-unknown-linux-gnu/openethereum /bin/openethereum
+# add openetc binary to docker image
+COPY artifacts/x86_64-unknown-linux-gnu/openetc /bin/openetc
 COPY tools/check_sync.sh /check_sync.sh
 
-# switch to user openethereum here
-USER openethereum
+# switch to user openetc here
+USER openetc
 
 # check if executable works in this container
-RUN openethereum --version
+RUN openetc --version
 
 EXPOSE 5001 8080 8082 8083 8545 8546 8180 30303/tcp 30303/udp
 
-ENTRYPOINT ["/bin/openethereum"]
+ENTRYPOINT ["/bin/openetc"]

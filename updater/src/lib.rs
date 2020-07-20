@@ -14,7 +14,7 @@
 // You should have received a copy of the GNU General Public License
 // along with Open Ethereum.  If not, see <http://www.gnu.org/licenses/>.
 
-//! Updater for OpenEthereum executables
+//! Updater for OpenETC executables
 
 #![warn(missing_docs)]
 

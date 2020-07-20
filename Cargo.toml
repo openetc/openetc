@@ -1,10 +1,11 @@
 [package]
-description = "OpenEthereum"
-name = "openethereum"
+description = "OpenETC"
+name = "openetc"
 # NOTE Make sure to update util/version/Cargo.toml as well
 version = "3.0.1"
 license = "GPL-3.0"
 authors = [
+	"OpenETC contributors",
 	"OpenEthereum developers",
 	"Parity Technologies <admin@parity.io>"
 ]
@@ -114,7 +115,7 @@ path = "parity/lib.rs"
 
 [[bin]]
 path = "parity/main.rs"
-name = "openethereum"
+name = "openetc"
 
 [profile.release]
 debug = false

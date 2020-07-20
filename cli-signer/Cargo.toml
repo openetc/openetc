@@ -1,6 +1,6 @@
 [package]
-description = "OpenEthereum CLI Signer Tool"
-repository = "https://github.com/openethereum/openethereum"
+description = "OpenETC CLI Signer Tool"
+repository = "https://github.com/openetc/openetc"
 license = "GPL-3.0"
 name = "cli-signer"
 version = "1.4.0"

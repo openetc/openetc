@@ -1,5 +1,5 @@
 [package]
-description = "OpenEthereum Virtual Machine (EVM) Rust Implementation"
+description = "OpenETC Virtual Machine (EVM) Rust Implementation"
 name = "evm"
 version = "0.1.0"
 authors = ["Parity Technologies <admin@parity.io>"]

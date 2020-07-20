@@ -42,19 +42,19 @@ ENV RUST_BACKTRACE 1
 # show tools
 RUN rustc -vV && cargo -V
 
-# build OpenEthereum
-ADD . /build/openethereum
-RUN cd openethereum && \
+# build OpenETC
+ADD . /build/openetc
+RUN cd openetc && \
 	mkdir -p .cargo && \
 	echo '[target.aarch64-unknown-linux-gnu]\n\
 	linker = "aarch64-linux-gnu-gcc"\n'\
 	>>.cargo/config && \
 	cat .cargo/config && \
 	cargo build --target aarch64-unknown-linux-gnu --release --verbose && \
-	ls /build/openethereum/target/aarch64-unknown-linux-gnu/release/openethereum && \
-	/usr/bin/aarch64-linux-gnu-strip /build/openethereum/target/aarch64-unknown-linux-gnu/release/openethereum
+	ls /build/openetc/target/aarch64-unknown-linux-gnu/release/openetc && \
+	/usr/bin/aarch64-linux-gnu-strip /build/openetc/target/aarch64-unknown-linux-gnu/release/openetc
 
-RUN file /build/openethereum/target/aarch64-unknown-linux-gnu/release/openethereum
+RUN file /build/openetc/target/aarch64-unknown-linux-gnu/release/openetc
 
 EXPOSE 8080 8545 8180
-ENTRYPOINT ["/build/openethereum/target/aarch64-unknown-linux-gnu/release/openethereum"]
+ENTRYPOINT ["/build/openetc/target/aarch64-unknown-linux-gnu/release/openetc"]

@@ -1,8 +1,8 @@
 [Desktop Entry]
 Type=Application
 Encoding=UTF-8
-Name=OpenEthereum
+Name=OpenETC
 Comment=Fast and feature-rich multi-network Ethereum client.
-Exec=openethereum
+Exec=OpenETC
 Icon=/usr/share/pixmaps/icon.png
 Terminal=true

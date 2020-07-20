@@ -1,6 +1,6 @@
 [package]
 description = "Parity Smart Contract based Node Filter, Manage Permissions of Network Connections"
-repository = "https://github.com/openethereum/openethereum"
+repository = "https://github.com/openetc/openetc"
 license = "GPL-3.0"
 name = "node-filter"
 version = "1.12.0"

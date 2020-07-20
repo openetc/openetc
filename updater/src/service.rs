@@ -16,7 +16,7 @@
 
 use types::{CapState, ReleaseInfo, OperationsInfo, VersionInfo};
 
-/// OpenEthereum updater service trait
+/// OpenETC updater service trait
 pub trait Service: Send + Sync {
 	/// Is the currently running client capable of supporting the current chain?
 	/// We default to true if there's no clear information.
