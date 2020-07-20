@@ -4,18 +4,22 @@
 
 Fast and feature-rich multi-network [Ethereum Classic](https://ethereumclassic.org) client.
 
-This project is a fork of [openethereum/openethereum](https://github.com/openethereum/openethereum). The maintainer of OpenEthereum client [dropped support for Ethereum Classic](https://github.com/openethereum/openethereum/pull/11821), which we intend to keep.
+This project is an alternative to [openethereum/openethereum](https://github.com/openethereum/openethereum). The maintainer of OpenEthereum client [dropped support for Ethereum Classic](https://github.com/openethereum/openethereum/pull/11821), which we intend to keep as ParityEthereum did.
 
 [» Download the latest release «](https://github.com/openetc/openetc/releases/latest)
 
 [![GPL licensed][license-badge]][license-url]
 [![Build Status][ci-badge]][ci-url]
+[![ETC Discord][etc-chat-badge]][etc-chat-url]
 [![Discord chat][chat-badge]][chat-url]
+![Github Releases](https://img.shields.io/github/downloads/openetc/openetc/total.svg)
 
 [license-badge]: https://img.shields.io/badge/license-GPL_v3-green.svg
 [license-url]: LICENSE
 [ci-badge]: https://github.com/openetc/openetc/workflows/Build%20and%20Test%20Suite/badge.svg
 [ci-url]: https://github.com/openetc/openetc/actions
+[etc-chat-badge]: https://img.shields.io/discord/223674353001168906.svg?logo=discord
+[etc-chat-url]: https://discord.gg/HW4GckH
 [chat-badge]: https://img.shields.io/discord/734474532295016559.svg?logo=discord
 [chat-url]: https://discord.gg/4PyGtp7
 
@@ -51,7 +55,7 @@ OpenETC's goal is to be the fastest, lightest, and most secure Ethereum Classic 
 
 By default, OpenETC runs a JSON-RPC HTTP server on port `:8545` and a Web-Sockets server on port `:8546`. This is fully configurable and supports a number of APIs.
 
-If you run into problems while using OpenETC, check out the [old wiki for documentation](https://wiki.parity.io/), feel free to [file an issue in this repository](https://github.com/openetc/openetc/issues/new), or hop on our [Discord](https://discord.gg/4PyGtp7) chat room to ask a question. We are glad to help!
+If you run into problems while using OpenETC, check out the [old wiki for documentation](https://wiki.parity.io/), feel free to [file an issue in this repository](https://github.com/openetc/openetc/issues/new), or hop on our [Discord](https://discord.gg/HW4GckH) chat room to ask a question. We are glad to help!
 
 You can download OpenETC's latest release at [the releases page](https://github.com/openetc/openetc/releases) or follow the instructions below to build from source. Read the [CHANGELOG.md](CHANGELOG.md) for a list of all changes between different versions.
 
