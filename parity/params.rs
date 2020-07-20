@@ -59,7 +59,7 @@ pub enum SpecType {
 
 impl Default for SpecType {
 	fn default() -> Self {
-		SpecType::Foundation
+		SpecType::Classic
 	}
 }
 
@@ -268,11 +268,7 @@ pub enum GasPricerConfig {
 
 impl Default for GasPricerConfig {
 	fn default() -> Self {
-		GasPricerConfig::Calibrated {
-			usd_per_tx: 0.0001f32,
-			recalibration_period: Duration::from_secs(3600),
-			api_endpoint: configuration::ETHERSCAN_ETH_PRICE_ENDPOINT.to_string(),
-		}
+		GasPricerConfig::Fixed(0.into())
 	}
 }
 
@@ -415,7 +411,7 @@ mod tests {
 
 	#[test]
 	fn test_spec_type_default() {
-		assert_eq!(SpecType::Foundation, SpecType::default());
+		assert_eq!(SpecType::Classic, SpecType::default());
 	}
 
 	#[test]

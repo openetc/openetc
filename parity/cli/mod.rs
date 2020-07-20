@@ -298,7 +298,7 @@ usage! {
 			"--release-track=[TRACK]",
 			"Set which release track we should use for updates. TRACK can be one of: stable - Stable releases; nightly - Nightly releases (unstable); testing - Testing releases (do not use); current - Whatever track this executable was released on.",
 
-			ARG arg_chain: (String) = "foundation", or |c: &Config| c.parity.as_ref()?.chain.clone(),
+			ARG arg_chain: (String) = "classic", or |c: &Config| c.parity.as_ref()?.chain.clone(),
 			"--chain=[CHAIN]",
 			"Specify the blockchain type. CHAIN may be either a JSON chain specification file or ethereum, classic, poacore, xdai, volta, ewc, musicoin, ellaism, mix, callisto, ethercore, mordor, ropsten, kovan, rinkeby, goerli, kotti, poasokol, testnet, evantestcore, evancore or dev.",
 
@@ -737,7 +737,7 @@ usage! {
 			"--usd-per-tx=[USD]",
 			"Amount of USD to be paid for a basic transaction. The minimum gas price is set accordingly.",
 
-			ARG arg_usd_per_eth: (String) = "auto", or |c: &Config| c.mining.as_ref()?.usd_per_eth.clone(),
+			ARG arg_usd_per_eth: (String) = "0", or |c: &Config| c.mining.as_ref()?.usd_per_eth.clone(),
 			"--usd-per-eth=[SOURCE]",
 			"USD value of a single ETH. SOURCE may be either an amount in USD, a web service or 'auto' to use each web service in turn and fallback on the last known good value.",
 
